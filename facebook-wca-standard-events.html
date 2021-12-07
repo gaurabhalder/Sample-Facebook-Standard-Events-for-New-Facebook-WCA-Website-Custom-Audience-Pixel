@@ -1,0 +1,169 @@
+<!-- Facebook Custom Audience Pixel Code - Placed on Every Page of Site -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '{{facebook pixel}}');
+fbq('track', 'PageView');
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Custom Audience Pixel Code -->
+
+<!-- Facebook Paramater Guide
+	// Recommended For Every Event - This is used to calculate ROAS (Return On Ad Spend) and does not have to be an actual transaction value.
+	value: value of a user performing this event to the business //	cd[value]=
+	currency: currency for the value specified // cd[currency]=
+	
+	// Required for Dynamic Product Ads
+	content_ids: Product ids associated with the event. e.g. SKUs of products for AddToCart event: ['ABC123', 'XYZ789'] // cd[content_ids]=
+	content_type: Either 'product' or 'product_group' based on the content_ids being passed. If the ids being passed in content_ids parameter are ids of products then the value should be 'product'. If product group ids are being passed, then the value should be 'product_group'. // cd[content_type]=
+	
+	// Everything Else
+	content_name: Name of the page/product // cd[content_name]=
+	content_category: Category of the page/product // cd[content_category]=
+	content_ids: Product ids associated with the event. e.g. SKUs of products for AddToCart event: ['ABC123', 'XYZ789'] // cd[content_ids]=
+	content_type: Either 'product' or 'product_group' based on the content_ids being passed. If the ids being passed in content_ids parameter are ids of products then the value should be 'product'. If product group ids are being passed, then the value should be 'product_group'. // cd[content_type]=
+	num_items: Used with InitiateCheckout event. The number of items that checkout was initiated for. // cd[num_items]=
+	search_string: Used with the Search event. The string entered by the user for the search // cd[search_string]=
+	status: Used with the CompleteRegistration event, to show the status of the registration. // cd[status]=
+	
+-->
+
+<!-- Facebook Conversion Event: View Content -->
+<script>
+	fbq('track', 'ViewContent', { 
+        	value: 0.10,
+        	currency: 'USD',
+        	content_name: 'Content Name',
+        	content_type: 'product', // Required for Dynamic Product Ads
+        	content_ids: 'woo-123' // Required for Dynamic Product Ads
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=ViewContent&cd[value]=0.10&cd[currency]=USD&cd[content_name]=Content%20Name&cd[content_type]=product&cd[content_ids]=woo-123&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: View Content -->
+
+<!-- Facebook Conversion Event: Search -->
+<script>
+var searchString = document.getElementsByClassName('search-field')[0].value;
+	fbq('track', 'Search', { 
+		value: 0.10,
+		currency: 'USD',
+		content_category: 'snippets',
+		content_ids: 'woo-123',
+		search_string: searchString
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=Search&cd[value]=0.10&cd[currency]='USD'&cd[content_category]=snippets&cd[content_ids]=woo-123&cd[search_string]=searchString&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Search -->
+
+<!-- Facebook Conversion Event: Add to cart -->
+<script>
+	fbq('track', 'AddToCart', { 
+		value: 10.00,
+		currency: 'USD',
+		content_name: 'Product Name',
+		content_type: 'product', // Required for Dynamic Product Ads
+		content_ids: 'woo-123' // Required for Dynamic Product Ads
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=AddToCart&cd[value]=10.00&cd[currency]=USD&cd[content_name]=Product%20Name&cd[content_type]=product&cd[content_ids]=woo-123&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Add to cart -->
+
+<!-- Facebook Conversion Event: Add to wishlist -->
+<script>
+	fbq('track', 'AddToWishlist', { 
+		value: 0.10,
+		currency: 'USD',
+		content_name: 'Product Name',
+		content_category: 'snippets',
+		content_ids: 'woo-123',
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=AddToWishlist&cd[value]=0.10&cd[currency]='USD'&cd[content_name]=Product%Name&cd[content_category]=snippets&cd[content_ids]=woo-123&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Add to wishlist -->
+
+<!-- Facebook Conversion Event: Initiate Checkout -->
+<script>
+	fbq('track', 'InitiateCheckout', { 
+		value: 0.10,
+		currency: 'USD',
+		content_name: 'Checkout',
+		content_category: 'snippets',
+		content_ids: 'woo-123',
+		num_ids: 1
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=InitiateCheckout&cd[value]=0.10&cd[currency]='USD'&cd[content_name]=Checkout&cd[content_category]=snippets&cd[content_ids]=woo-123&cd[num_items]=1&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Initiate Checkout -->
+
+<!-- Facebook Conversion Event: Add payment info -->
+<script>
+	fbq('track', 'AddPaymentInfo', { 
+		value: 0.10,
+		currency: 'USD',
+		content_category: 'snippets',
+		content_ids: 'woo-123'
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=AddPaymentInfo&cd[value]=0.10&cd[currency]='USD'&cd[content_category]=snippets&cd[content_ids]=woo-123&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Add payment info -->
+
+<!-- Facebook Conversion Event: Purchase -->
+<script>
+	fbq('track', 'Purchase', { 
+		value: 10.00,
+		currency: 'USD',
+		content_name: 'Product Name',
+		content_type: 'product',
+		content_ids: 'woo-123',
+		num_items: 1
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=Purchase&cd[value]=10.00&cd[currency]=USD&cd[content_name]=Product%20Name&cd[content_type]=product&cd[content_ids]=woo-123&cd[num_items]=1&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Purchase -->
+
+<!-- Facebook Conversion Event: Lead -->
+<script>
+	fbq('track', 'Lead', { 
+		value: 0.10,
+		currency: 'USD',
+		content_name: 'Report',
+		content_category: 'B2B'
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=Lead&cd[value]=0.10&cd[currency]='USD'&cd[content_name]=Report&cd[content_category]=B2B&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Lead -->
+
+<!-- Facebook Conversion Event: Complete Registration -->
+<script>
+	fbq('track', 'CompleteRegistration', { 
+		value: 0.10,
+		currency: 'USD',
+		content_name: 'Signup',
+		status: 'complete'
+    	});
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{facebook pixel}}&ev=CompleteRegistration&cd[value]=0.10&cd[currency]='USD'&cd[content_name]=Signup&cd[status]=complete&noscript=1" />
+</noscript>
+<!-- End Facebook Conversion Event: Complete Registration -->
